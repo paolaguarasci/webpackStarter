@@ -1,17 +1,21 @@
-// Generated with https://generatewebpackconfig.netlify.com
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/app.js",
+  entry: {
+    // Alow multiple entry point
+    main: "./app.js"
+  },
   output: {
-    path: __dirname + "/dist",
-    filename: "[name].js"
+    path: path.resolve(__dirname, "public"),
+    filename: "js/bundle.js"
   },
   devtool: "source-map",
   module: {
     rules: [
       {
+        // ES6+
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -22,17 +26,35 @@ module.exports = {
         }
       },
       {
+        // SASS and CSS
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       },
       {
+        // IMG
         test: /\.(png|svg|jpg|gif)$/,
         use: {
           loader: "file-loader",
-          options: { name: "[name].[ext]" }
+          options: {
+            name: "img/[name].[ext]"
+          }
+        }
+      },
+      {
+        // HTML
+        test: /\.(html|htm)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]"
+          }
         }
       }
-    ]
-  },
-  plugins: [new MiniCssExtractPlugin({ filename: "[name].css" })]
+    ] // end rules
+  }, // end modules
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css"
+    })
+  ] // end plugins
 };

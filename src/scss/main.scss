@@ -3,10 +3,6 @@ $bluegrey: #334455;
 
 body {
   background: $primary-color;
-  color: white;
+  color: red;
   font: 100;
-}
-
-.myDiv {
-  background: $bluegrey url("../img/code.png") no-repeat center center / 32px;
 }
