@@ -2,15 +2,14 @@
 
 ### Now
 
-- File index.html in '/' che non viene toccato e utilizza link diretti al bundle.
-- Preprocessore CSS
+- Preprocessor CSS, SASS and SCSS
+- Make a .css
 - Img loader
 - Transpiler ES6 (Babel)
-- Genera un .css separato da bundle.js
-- Importa tutto il contenuto delle cartelle, senza specificare i singoli file.
+- Import all files in right folder
 
 ### ToDo
 
 - Plugin HTML
-- Divisione dei processi (dev e prod)
-- Integrazione di HTML5Boilerplate
+- Make different script for dev and prod
+- Insert HTML5Boilerplate
