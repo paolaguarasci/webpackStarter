@@ -1,6 +1,9 @@
 # Build
 public
 
+# Host
+.firebase
+
 # Logs
 logs
 *.log
